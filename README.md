@@ -9,16 +9,17 @@ DFG-> https://www.vicos.si/Downloads/DFGTSD
 -The model is being tuned to work on the images taken from the onboard camera of the Autonomous vehicle where it recognizes and classifies several traffic signs in the scenario , captured by the camera attached to the vehicle.
 
 The different techniques like below are in progress:
--Data Augmentation 
--Prevention of Overfitting and saving the last best weights
--Multiple GPUs (DDP from PyTorch)
--Exploration of best learning rates
--Feasibilty of Ensembe of Models
--Different Losses like Classification Loss, Object Loss and Box loss
--The status of the weights being currently used in evry epoch
--Different Image sizes
--Usage of Wandb and Tesnorboard for better visualization of logs and results
--Using Inference on different images from the surroundings and getting better confidence score
+- Data Augmentation 
+- Prevention of Overfitting and saving the last best weights
+- Multiple GPUs (DDP from PyTorch)
+- Exploration of best learning rates
+- Feasibilty of Ensembe of Models
+- Different Losses like Classification Loss, Object Loss and Box loss
+- The status of the weights being currently used in evry epoch
+- Freezing of some layers for Transfer Learning
+- Different Image sizes
+- Usage of Wandb and Tesnorboard for better visualization of logs and results
+- Using Inference on different images from the surroundings and getting better confidence score
 
 The libraries being used here are: PyTorch, matplotlib, numpy, opencv, tensorboard, scikit-learn, wandb
 
