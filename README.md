@@ -10,17 +10,17 @@ DFG-> https://www.vicos.si/Downloads/DFGTSD
 
 The different techniques like below are in progress:
 - Data Augmentation 
-- Prevention of Overfitting and saving the last best weights
+- Freezing of some layers for Transfer Learning from DFG and GTSRB to GTSDB. Retraining by unfreezing the whole network but with different learning rates for backbone and head.
+- Prevention of Overfitting (Early Stopping) and saving the last best weights
 - Multiple GPUs (DDP from PyTorch)
 - Exploration of best learning rates
-- Feasibilty of Ensembe of Models
+- Feasibilty of Ensembe of Models (Inferences using the combination of YOLOv3 and YOLOv5)
 - Different Losses like Classification Loss, Object Loss and Box loss
 - The status of the weights being currently used in evry epoch
-- Freezing of some layers for Transfer Learning
-- Different Image sizes
+- Different Image sizes (Multi-scale training)
 - Usage of Wandb and Tesnorboard for better visualization of logs and results
 - Using Inference on different images from the surroundings and getting better confidence score
-
+- For results, look at yolov5/runs/train/exp58 (GTSDB) , yolov5/runs/train/exp26 (DFG) and yolov5/runs/train/exp14 (GTSRB)
 The libraries being used here are: PyTorch, matplotlib, numpy, opencv, tensorboard, scikit-learn, wandb
 
 
@@ -33,16 +33,6 @@ $ pip install -r requirements.txt
 
 ## Inference
 
-detect.py runs inference on a variety of sources, downloading models automatically from the [latest YOLOv5 release](https://github.com/ultralytics/yolov5/releases) and saving results to `runs/detect`.
-```bash
-$ python detect.py --source 0  # webcam
-                            file.jpg  # image 
-                            file.mp4  # video
-                            path/  # directory
-                            path/*.jpg  # glob
-                            rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa  # rtsp stream
-                            rtmp://192.168.1.105/live/test  # rtmp stream
-                            http://112.50.243.8/PLTV/88888888/224/3221225900/1.m3u8  # http stream
 ```
 
 To run inference on example images in `data/images`:
